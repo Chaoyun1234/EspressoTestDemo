@@ -8,16 +8,24 @@ import android.widget.EditText;
 import com.microsoft.azure.mobile.MobileCenter;
 import com.microsoft.azure.mobile.analytics.Analytics;
 import com.microsoft.azure.mobile.crashes.Crashes;
+import com.microsoft.azure.mobile.push.Push;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Push.setListener(new MyPushListener());
+        MobileCenter.start(getApplication(), "7800c652-e38a-406e-a6ec-35f242576409",
+                Analytics.class, Crashes.class, Push.class);
+
+        Analytics.trackEvent("Click_NewButton");
+        Analytics.trackEvent("Click_Cancel");
+        Analytics.trackEvent("EnterText");
         setContentView(R.layout.activity_main);
         editText = (EditText) findViewById(R.id.inputField);
-        MobileCenter.start(getApplication(), "7800c652-e38a-406e-a6ec-35f242576409",
-                Analytics.class, Crashes.class);
+
     }
 
     public void onClick(View view) {

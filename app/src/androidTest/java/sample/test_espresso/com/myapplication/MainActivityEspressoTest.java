@@ -17,7 +17,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
-import android.support.test.runner.AndroidJUnit4;
+
 import com.xamarin.testcloud.espresso.Factory;
 import com.xamarin.testcloud.espresso.ReportHelper;
 
