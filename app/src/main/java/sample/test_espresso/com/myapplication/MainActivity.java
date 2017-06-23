@@ -8,7 +8,7 @@ import android.widget.EditText;
 import com.microsoft.azure.mobile.MobileCenter;
 import com.microsoft.azure.mobile.analytics.Analytics;
 import com.microsoft.azure.mobile.crashes.Crashes;
-import com.microsoft.azure.mobile.push.Push;
+//import com.microsoft.azure.mobile.push.Push;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Push.setListener(new MyPushListener());
+        //Push.setListener(new MyPushListener());
         MobileCenter.start(getApplication(), "7800c652-e38a-406e-a6ec-35f242576409",
-                Analytics.class, Crashes.class, Push.class);
+                Analytics.class, Crashes.class);
 
         Analytics.trackEvent("Click_NewButton");
         Analytics.trackEvent("Click_Cancel");
